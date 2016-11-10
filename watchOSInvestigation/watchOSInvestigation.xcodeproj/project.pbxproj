@@ -19,6 +19,8 @@
 		A9302D131DD4107E008B31CC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9302D121DD4107E008B31CC /* InterfaceController.swift */; };
 		A9302D151DD4107E008B31CC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9302D141DD4107E008B31CC /* ExtensionDelegate.swift */; };
 		A9302D171DD4107E008B31CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9302D161DD4107E008B31CC /* Assets.xcassets */; };
+		A9302D271DD44059008B31CC /* MeatSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9302D261DD44059008B31CC /* MeatSelector.swift */; };
+		A9302D291DD4406E008B31CC /* ConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9302D281DD4406E008B31CC /* ConfirmController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		A9302D141DD4107E008B31CC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A9302D161DD4107E008B31CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9302D181DD4107E008B31CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9302D261DD44059008B31CC /* MeatSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeatSelector.swift; sourceTree = "<group>"; };
+		A9302D281DD4406E008B31CC /* ConfirmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				A9302D121DD4107E008B31CC /* InterfaceController.swift */,
+				A9302D261DD44059008B31CC /* MeatSelector.swift */,
+				A9302D281DD4406E008B31CC /* ConfirmController.swift */,
 				A9302D141DD4107E008B31CC /* ExtensionDelegate.swift */,
 				A9302D161DD4107E008B31CC /* Assets.xcassets */,
 				A9302D181DD4107E008B31CC /* Info.plist */,
@@ -301,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9302D291DD4406E008B31CC /* ConfirmController.swift in Sources */,
 				A9302D151DD4107E008B31CC /* ExtensionDelegate.swift in Sources */,
+				A9302D271DD44059008B31CC /* MeatSelector.swift in Sources */,
 				A9302D131DD4107E008B31CC /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +563,7 @@
 				A9302D1D1DD4107E008B31CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9302D1F1DD4107E008B31CC /* Build configuration list for PBXNativeTarget "watchOSInvestigation WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +572,7 @@
 				A9302D211DD4107E008B31CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9302D231DD4107E008B31CC /* Build configuration list for PBXNativeTarget "watchOSInvestigation" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +581,7 @@
 				A9302D251DD4107E008B31CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
