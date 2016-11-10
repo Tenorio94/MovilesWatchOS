@@ -8,7 +8,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSInvestigation_WatchKit_App" customModuleProvider="target">
+                <controller hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSInvestigation_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" id="GAQ-E5-Zy2">
                             <items>
@@ -29,7 +29,7 @@
                             <items>
                                 <button width="1" alignment="left" title="Siguiente" id="1WM-z5-CoC">
                                     <connections>
-                                        <segue destination="AEH-b1-tRU" kind="modal" id="gyw-8f-O71"/>
+                                        <segue destination="AEH-b1-tRU" kind="push" id="jsD-Nx-wLi"/>
                                     </connections>
                                 </button>
                             </items>
@@ -92,12 +92,44 @@
                                         </items>
                                     </group>
                                 </tableRow>
+                                <tableRow id="KBe-Ir-CJX">
+                                    <group key="rootItem" width="1" alignment="left" id="I3S-9z-VGI">
+                                        <items>
+                                            <button width="1" alignment="left" title="Finalizar" id="Rbg-ht-16v">
+                                                <connections>
+                                                    <segue destination="Ejr-2R-LFi" kind="push" id="Nl6-43-mqk"/>
+                                                </connections>
+                                            </button>
+                                        </items>
+                                    </group>
+                                </tableRow>
                             </items>
                         </table>
                     </items>
                 </controller>
             </objects>
             <point key="canvasLocation" x="429" y="127"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="bKf-Jy-MmS">
+            <objects>
+                <controller id="Ejr-2R-LFi">
+                    <items>
+                        <group width="1" alignment="left" id="jWk-Xj-Mm2">
+                            <items>
+                                <label alignment="left" text="Tu orden final es: " id="CIV-Wz-Pej"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="c1O-lD-YX6">
+                            <items>
+                                <label alignment="left" text="Orden Completa" id="Tzi-wc-ngv"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Finalizar" id="LRp-aQ-3ur"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="739" y="126"/>
         </scene>
     </scenes>
 </document>
