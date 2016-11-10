@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cJc-sy-M64">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--Flight-->
+        <scene sceneID="fdm-wV-BrU">
+            <objects>
+                <controller identifier="Flight" hidesWhenLoading="NO" id="cJc-sy-M64">
+                    <items>
+                        <group alignment="left" id="A7F-p3-kdC">
+                            <items>
+                                <label alignment="left" text="Tipo de Pan" id="aR6-Go-UTz"/>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
+                        </group>
+                        <group alignment="right" layout="vertical" id="Z4y-R7-37S">
+                            <items>
+                                <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="0pI-An-8Bs"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="hym-yU-i5g">
+                            <items>
+                                <label alignment="left" text="Nombre de Pan" id="0aA-z9-RfE"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="5qK-lF-wuO">
+                            <items>
+                                <button width="1" alignment="left" title="Siguiente" id="ri0-pr-z5o"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="239" y="314"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

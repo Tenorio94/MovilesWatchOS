@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSInvestigation_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="GAQ-E5-Zy2">
+                            <items>
+                                <label alignment="left" text="Tipo de Pan" id="pGO-f2-KI2"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="4cE-HQ-BXM">
+                            <items>
+                                <slider width="1" alignment="left" value="1" maximum="4" steps="4" id="v04-5s-RQs">
+                                    <connections>
+                                        <action selector="valueChanged:" destination="AgC-eL-Hgc" id="878-t0-ksp"/>
+                                    </connections>
+                                </slider>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="xT6-DH-piX">
+                            <items>
+                                <label alignment="left" text="Pan Integral" id="7ZW-EZ-XbV"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="UI8-7a-IqC">
+                            <items>
+                                <button width="1" alignment="left" title="Siguiente" id="1WM-z5-CoC">
+                                    <connections>
+                                        <segue destination="AEH-b1-tRU" kind="push" identifier="breadSegue" id="jsD-Nx-wLi"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="labelBreadName" destination="7ZW-EZ-XbV" id="bxw-wk-mMH"/>
+                        <outlet property="sliderBread" destination="v04-5s-RQs" id="gjT-ut-gr6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="183" y="126"/>
+        </scene>
+        <!--Meat Selector-->
+        <scene sceneID="nKa-We-Nb0">
+            <objects>
+                <controller id="AEH-b1-tRU" customClass="MeatSelector" customModule="watchOSInvestigation_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="20" alignment="left" id="c2p-TX-XP6">
+                            <items>
+                                <label alignment="left" text="Pan" id="8o3-xU-7Ie"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="raC-mZ-CmD"/>
+                        <group width="1" alignment="left" id="Rgf-vb-p4q">
+                            <items>
+                                <label alignment="left" text="Tipo de Carne" id="nn2-zf-dHO"/>
+                            </items>
+                        </group>
+                        <switch width="1" alignment="left" value="YES" title="Pollo" id="V0e-pz-CmP">
+                            <connections>
+                                <action selector="polloChange:" destination="AEH-b1-tRU" id="KnU-3W-jfP"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Jamón" id="WAj-Lc-B6D">
+                            <connections>
+                                <action selector="jamonChange:" destination="AEH-b1-tRU" id="UFE-Dz-AXB"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Res" id="nz4-Zc-xAI">
+                            <connections>
+                                <action selector="resChange:" destination="AEH-b1-tRU" id="ZDN-io-H8E"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Salchicha" id="HFF-cL-vIC">
+                            <connections>
+                                <action selector="salchichaChange:" destination="AEH-b1-tRU" id="qt0-M4-UMG"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" value="YES" title="Tocino" id="MGf-QK-VJO">
+                            <connections>
+                                <action selector="tocinoChange:" destination="AEH-b1-tRU" id="y23-c3-hFI"/>
+                            </connections>
+                        </switch>
+                        <button width="1" alignment="left" title="Confirmar Orden" id="00H-JC-Axb">
+                            <connections>
+                                <segue destination="Ejr-2R-LFi" kind="push" identifier="toppingSegue" id="9xZ-Cn-R0u"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="labelBread" destination="8o3-xU-7Ie" id="wRn-MJ-XJe"/>
+                        <outlet property="swJamon" destination="WAj-Lc-B6D" id="Mvl-yn-EfL"/>
+                        <outlet property="swPollo" destination="V0e-pz-CmP" id="34R-l1-nlU"/>
+                        <outlet property="swRes" destination="nz4-Zc-xAI" id="3RT-Hq-MEE"/>
+                        <outlet property="swSalchicha" destination="HFF-cL-vIC" id="3In-Pi-JFE"/>
+                        <outlet property="swTocino" destination="MGf-QK-VJO" id="8al-hK-GLo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="458" y="126"/>
+        </scene>
+        <!--Confirm Controller-->
+        <scene sceneID="bKf-Jy-MmS">
+            <objects>
+                <controller id="Ejr-2R-LFi" customClass="ConfirmController" customModule="watchOSInvestigation_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="jWk-Xj-Mm2">
+                            <items>
+                                <label alignment="left" text="Tu orden final es: " id="CIV-Wz-Pej"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="c1O-lD-YX6">
+                            <items>
+                                <label alignment="left" text="Orden Completa" id="Tzi-wc-ngv"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="GGb-a2-ySy"/>
+                        <label alignment="left" text="Ingredientes:" id="7Q5-8s-KoE"/>
+                        <group width="1" alignment="left" layout="vertical" id="C8g-1z-NL5">
+                            <items>
+                                <label alignment="center" text="Label" id="3e6-QN-XMp"/>
+                                <label alignment="center" text="Label" id="MqJ-Mr-TUk"/>
+                                <label alignment="center" verticalAlignment="bottom" text="Label" id="Qqs-0R-eh8"/>
+                                <label alignment="center" verticalAlignment="bottom" text="Label" id="6B3-C6-aJ7"/>
+                                <label alignment="center" text="Label" id="2LC-fT-xSJ"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="B9T-mc-kB4"/>
+                        <button width="1" alignment="left" title="Finalizar" id="LRp-aQ-3ur"/>
+                    </items>
+                    <connections>
+                        <outlet property="labelJamon" destination="MqJ-Mr-TUk" id="15E-nt-QL3"/>
+                        <outlet property="labelPollo" destination="3e6-QN-XMp" id="wX1-eN-JOn"/>
+                        <outlet property="labelRes" destination="Qqs-0R-eh8" id="1Jh-5V-lPG"/>
+                        <outlet property="labelResumen" destination="Tzi-wc-ngv" id="H0P-s1-5ba"/>
+                        <outlet property="labelSalchicha" destination="6B3-C6-aJ7" id="WYA-h2-2jt"/>
+                        <outlet property="labelTocino" destination="2LC-fT-xSJ" id="fDq-ou-9FU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="739" y="126"/>
+        </scene>
+    </scenes>
+</document>
