@@ -12,17 +12,21 @@
                     <items>
                         <group width="1" alignment="left" id="GAQ-E5-Zy2">
                             <items>
-                                <label alignment="left" text="Tipo de pan" id="pGO-f2-KI2"/>
+                                <label alignment="left" text="Tipo de Pan" id="pGO-f2-KI2"/>
                             </items>
                         </group>
                         <group width="1" alignment="left" id="4cE-HQ-BXM">
                             <items>
-                                <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="v04-5s-RQs"/>
+                                <slider width="1" alignment="left" value="1" maximum="4" steps="4" id="v04-5s-RQs">
+                                    <connections>
+                                        <action selector="valueChanged:" destination="AgC-eL-Hgc" id="878-t0-ksp"/>
+                                    </connections>
+                                </slider>
                             </items>
                         </group>
                         <group width="1" alignment="left" id="xT6-DH-piX">
                             <items>
-                                <label alignment="left" text="Nombre del Pan" id="7ZW-EZ-XbV"/>
+                                <label alignment="left" text="Pan Integral" id="7ZW-EZ-XbV"/>
                             </items>
                         </group>
                         <group width="1" alignment="left" id="UI8-7a-IqC">
@@ -35,78 +39,47 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="labelBreadName" destination="7ZW-EZ-XbV" id="bxw-wk-mMH"/>
+                        <outlet property="sliderBread" destination="v04-5s-RQs" id="gjT-ut-gr6"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="183" y="126"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Meat Selector-->
         <scene sceneID="nKa-We-Nb0">
             <objects>
-                <controller id="AEH-b1-tRU">
+                <controller id="AEH-b1-tRU" customClass="MeatSelector" customModule="watchOSInvestigation_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="Rgf-vb-p4q">
                             <items>
                                 <label alignment="left" text="Tipo de Carne" id="nn2-zf-dHO"/>
                             </items>
                         </group>
-                        <table alignment="left" id="iHn-jx-NB5">
+                        <table alignment="left" id="Ymt-8O-iWr">
                             <items>
-                                <tableRow identifier="Pollo" id="n3N-Ht-LHi">
-                                    <group key="rootItem" width="1" alignment="left" id="nhJ-b8-3Q9">
+                                <tableRow identifier="NameRowControllerIdentifier" id="ut8-Y1-r4X" customClass="NameRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="a6E-W5-a29">
                                         <items>
-                                            <switch width="1" alignment="left" value="YES" title="Pollo" id="NQ9-fa-d3W"/>
+                                            <switch width="1" alignment="left" value="YES" title="Switch" id="usI-IK-iKh"/>
                                         </items>
                                     </group>
-                                </tableRow>
-                                <tableRow identifier="Res" id="EJG-ed-7ay">
-                                    <group key="rootItem" width="1" alignment="left" id="boI-Ie-Wua">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Res" id="WD8-1z-cGD"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow identifier="Puerco" id="Gmm-q5-tJG">
-                                    <group key="rootItem" width="1" alignment="left" id="cO2-Gc-UgS">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Puerco" id="FFf-UK-aoB"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow identifier="Jamón" id="rgW-fc-4zN">
-                                    <group key="rootItem" width="1" alignment="left" id="FKZ-O0-5Iu">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Jamon" id="pnu-TV-5Eo"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow identifier="Tocino" id="3Cj-5O-u3c">
-                                    <group key="rootItem" width="1" alignment="left" id="9g3-vd-jNf">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Sirloin" id="3aj-WG-RGg"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow identifier="Sirloin" id="HH0-FY-nRE">
-                                    <group key="rootItem" width="1" alignment="left" id="7E1-LT-Xzv">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Tocino" id="7ra-PN-YeX"/>
-                                        </items>
-                                    </group>
-                                </tableRow>
-                                <tableRow id="KBe-Ir-CJX">
-                                    <group key="rootItem" width="1" alignment="left" id="I3S-9z-VGI">
-                                        <items>
-                                            <button width="1" alignment="left" title="Finalizar" id="Rbg-ht-16v">
-                                                <connections>
-                                                    <segue destination="Ejr-2R-LFi" kind="push" id="Nl6-43-mqk"/>
-                                                </connections>
-                                            </button>
-                                        </items>
-                                    </group>
+                                    <connections>
+                                        <outlet property="swTopping" destination="usI-IK-iKh" id="gyH-zM-FwV"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" title="Confirmar Orden" id="00H-JC-Axb">
+                            <connections>
+                                <segue destination="Ejr-2R-LFi" kind="push" id="9xZ-Cn-R0u"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="Ymt-8O-iWr" id="kgc-eM-hwD"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="429" y="127"/>

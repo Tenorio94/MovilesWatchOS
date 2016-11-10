@@ -12,8 +12,14 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var sliderBread: WKInterfaceSlider!
+    
+    @IBOutlet var labelBreadName: WKInterfaceLabel!
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
         
         // Configure interface objects here.
     }
@@ -28,4 +34,27 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    @IBAction func valueChanged(_ value: Float) {
+        
+        switch (Int(round(value))) {
+            case 1 :
+                labelBreadName.setText("Pan Integral")
+                break
+            case 2 :
+                labelBreadName.setText("Pan Parmesano")
+                break
+            case 3 :
+                labelBreadName.setText("Pan Orégano")
+                break
+                case 3 :
+                    labelBreadName.setText("Pan Italiano")
+                    break
+            default :
+                labelBreadName.setText("Pan Blanco")
+                break
+        }
+        
+    }
+    
+    
 }
