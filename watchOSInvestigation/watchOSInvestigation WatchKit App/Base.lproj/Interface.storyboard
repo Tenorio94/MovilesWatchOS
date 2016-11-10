@@ -57,6 +57,7 @@
                                 <label alignment="left" text="Pan" id="8o3-xU-7Ie"/>
                             </items>
                         </group>
+                        <separator alignment="left" id="raC-mZ-CmD"/>
                         <group width="1" alignment="left" id="Rgf-vb-p4q">
                             <items>
                                 <label alignment="left" text="Tipo de Carne" id="nn2-zf-dHO"/>
@@ -120,10 +121,27 @@
                                 <label alignment="left" text="Orden Completa" id="Tzi-wc-ngv"/>
                             </items>
                         </group>
+                        <separator alignment="left" id="GGb-a2-ySy"/>
+                        <label alignment="left" text="Ingredientes:" id="7Q5-8s-KoE"/>
+                        <group width="1" alignment="left" layout="vertical" id="C8g-1z-NL5">
+                            <items>
+                                <label alignment="center" text="Label" id="3e6-QN-XMp"/>
+                                <label alignment="center" text="Label" id="MqJ-Mr-TUk"/>
+                                <label alignment="center" verticalAlignment="bottom" text="Label" id="Qqs-0R-eh8"/>
+                                <label alignment="center" verticalAlignment="bottom" text="Label" id="6B3-C6-aJ7"/>
+                                <label alignment="center" text="Label" id="2LC-fT-xSJ"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="B9T-mc-kB4"/>
                         <button width="1" alignment="left" title="Finalizar" id="LRp-aQ-3ur"/>
                     </items>
                     <connections>
+                        <outlet property="labelJamon" destination="MqJ-Mr-TUk" id="15E-nt-QL3"/>
+                        <outlet property="labelPollo" destination="3e6-QN-XMp" id="wX1-eN-JOn"/>
+                        <outlet property="labelRes" destination="Qqs-0R-eh8" id="1Jh-5V-lPG"/>
                         <outlet property="labelResumen" destination="Tzi-wc-ngv" id="H0P-s1-5ba"/>
+                        <outlet property="labelSalchicha" destination="6B3-C6-aJ7" id="WYA-h2-2jt"/>
+                        <outlet property="labelTocino" destination="2LC-fT-xSJ" id="fDq-ou-9FU"/>
                     </connections>
                 </controller>
             </objects>
