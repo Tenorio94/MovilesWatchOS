@@ -57,32 +57,20 @@
                                 <label alignment="left" text="Tipo de Carne" id="nn2-zf-dHO"/>
                             </items>
                         </group>
-                        <table alignment="left" id="Ymt-8O-iWr">
-                            <items>
-                                <tableRow identifier="NameRowControllerIdentifier" id="ut8-Y1-r4X" customClass="NameRowController">
-                                    <group key="rootItem" width="1" alignment="left" id="a6E-W5-a29">
-                                        <items>
-                                            <switch width="1" alignment="left" value="YES" title="Switch" id="usI-IK-iKh"/>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="swTopping" destination="usI-IK-iKh" id="gyH-zM-FwV"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
+                        <switch width="1" alignment="left" value="YES" title="Pollo" id="V0e-pz-CmP"/>
+                        <switch width="1" alignment="left" value="YES" title="Jamón" id="WAj-Lc-B6D"/>
+                        <switch width="1" alignment="left" value="YES" title="Res" id="nz4-Zc-xAI"/>
+                        <switch width="1" alignment="left" value="YES" title="Salchicha" id="HFF-cL-vIC"/>
+                        <switch width="1" alignment="left" value="YES" title="Tocino" id="MGf-QK-VJO"/>
                         <button width="1" alignment="left" title="Confirmar Orden" id="00H-JC-Axb">
                             <connections>
                                 <segue destination="Ejr-2R-LFi" kind="push" id="9xZ-Cn-R0u"/>
                             </connections>
                         </button>
                     </items>
-                    <connections>
-                        <outlet property="table" destination="Ymt-8O-iWr" id="kgc-eM-hwD"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="429" y="127"/>
+            <point key="canvasLocation" x="458" y="126"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="bKf-Jy-MmS">

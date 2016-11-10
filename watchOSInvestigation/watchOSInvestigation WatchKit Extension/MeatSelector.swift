@@ -11,20 +11,9 @@ import WatchKit
 
 class MeatSelector: WKInterfaceController {
 
-    @IBOutlet var table: WKInterfaceTable!
-    
-    let stringToppings = ["Matthew", "Mark", "Luke", "John"]
-
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        table.setNumberOfRows(stringToppings.count, withRowType: "NameRowControllerIdentifier")
-        
-        for (index, name) in stringToppings.enumerated() {
-            let row = table.rowController(at: index) as? NameRowController
-            row?.swTopping.setTitle(name)
-        }
         
         // Configure interface objects here.
     }

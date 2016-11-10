@@ -46,9 +46,9 @@ class InterfaceController: WKInterfaceController {
             case 3 :
                 labelBreadName.setText("Pan Orégano")
                 break
-                case 3 :
-                    labelBreadName.setText("Pan Italiano")
-                    break
+            case 4 :
+                labelBreadName.setText("Pan Italiano")
+                break
             default :
                 labelBreadName.setText("Pan Blanco")
                 break
