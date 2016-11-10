@@ -29,10 +29,10 @@ public struct QRCode {
   }
   
   /// CIQRCodeGenerator generates 27x27px images per default
-  private let DefaultQRCodeSize = CGSize(width: 27, height: 27)
+  fileprivate let DefaultQRCodeSize = CGSize(width: 27, height: 27)
   
   /// Data contained in the generated QRCode
-  public let data: NSData
+  public let data: Data
   
   /// Foreground color of the output
   /// Defaults to black
@@ -50,20 +50,20 @@ public struct QRCode {
   
   // MARK: Init
   
-  public init(_ data: NSData) {
+  public init(_ data: Data) {
     self.data = data
   }
   
   public init?(_ string: String) {
-    if let data = string.dataUsingEncoding(NSISOLatin1StringEncoding) {
+    if let data = string.data(using: String.Encoding.isoLatin1) {
       self.data = data
     } else {
       return nil
     }
   }
   
-  public init?(_ url: NSURL) {
-    if let data = url.absoluteString.dataUsingEncoding(NSISOLatin1StringEncoding) {
+  public init?(_ url: URL) {
+    if let data = url.absoluteString.data(using: String.Encoding.isoLatin1) {
       self.data = data
     } else {
       return nil
@@ -74,7 +74,7 @@ public struct QRCode {
   
   /// The QRCode's UIImage representation
   public var image: UIImage {
-    return UIImage(CIImage: ciImage)
+    return UIImage(ciImage: ciImage)
   }
   
   /// The QRCode's CIImage representation
@@ -95,8 +95,8 @@ public struct QRCode {
     // Size
     let sizeRatioX = size.width / DefaultQRCodeSize.width
     let sizeRatioY = size.height / DefaultQRCodeSize.height
-    let transform = CGAffineTransformMakeScale(sizeRatioX, sizeRatioY)
-    let transformedImage = colorFilter.outputImage!.imageByApplyingTransform(transform)
+    let transform = CGAffineTransform(scaleX: sizeRatioX, y: sizeRatioY)
+    let transformedImage = colorFilter.outputImage!.applying(transform)
     
     return transformedImage
   }
@@ -105,10 +105,10 @@ public struct QRCode {
 
 extension QRCode {
   
-  public var PNGData: NSData {
+  public var PNGData: Data {
     let context = CIContext(options: nil)
-    let cgImage = context.createCGImage(self.ciImage, fromRect: self.ciImage.extent)
-    let image = UIImage(CGImage: cgImage)
+    let cgImage = context.createCGImage(self.ciImage, from: self.ciImage.extent)
+    let image = UIImage(cgImage: cgImage!)
     let data = UIImagePNGRepresentation(image)!
     return data
   }

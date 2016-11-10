@@ -14,7 +14,7 @@ class Flight {
   let destination: String
   let number: String
   let boardsAt: String
-  private let delayed: String
+  fileprivate let delayed: String
   var onSchedule: Bool {
     get {
       return (delayed == "no")
@@ -29,7 +29,7 @@ class Flight {
   }
   var shortNumber: String {
     get {
-      return number.substringFromIndex(number.startIndex.advancedBy(2))
+      return number.substring(from: number.characters.index(number.startIndex, offsetBy: 2))
     }
   }
   var checkedIn = false
@@ -42,11 +42,11 @@ class Flight {
   
   class func allFlights() -> [Flight] {
     var flights = [Flight]()
-    let formatter = NSDateFormatter()
+    let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm"
-    if let path = NSBundle.mainBundle().pathForResource("Flights", ofType: "json"), let data = NSData(contentsOfFile: path) {
+    if let path = Bundle.main.path(forResource: "Flights", ofType: "json"), let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
       do {
-        let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! [Dictionary<String, String>]
+        let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [Dictionary<String, String>]
         for dict in json {
           let flight = Flight(dictionary: dict, formatter: formatter)
           flights.append(flight)
@@ -68,11 +68,11 @@ class Flight {
     self.seat = seat
   }
   
-  convenience init(dictionary: [String: String], formatter: NSDateFormatter) {
+  convenience init(dictionary: [String: String], formatter: DateFormatter) {
     let origin = dictionary["origin"]!
     let destination = dictionary["destination"]!
     let number = dictionary["number"]!
-    let boardsAt = formatter.stringFromDate(NSDate().dateByAddingTimeInterval(Double(arc4random_uniform(21600) + 1800)))
+    let boardsAt = formatter.string(from: Date().addingTimeInterval(Double(arc4random_uniform(21600) + 1800)))
     let delayed = dictionary["delayed"]!
     let gate = dictionary["gate"]!
     let row = ["A", "B", "C", "D", "E", "F", "G"]
