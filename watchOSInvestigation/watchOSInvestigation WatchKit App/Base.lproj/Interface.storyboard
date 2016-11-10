@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11077"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOSInvestigation_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="GAQ-E5-Zy2">
+                            <items>
+                                <label alignment="left" text="Tipo de pan" id="pGO-f2-KI2"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="4cE-HQ-BXM">
+                            <items>
+                                <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="v04-5s-RQs"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="xT6-DH-piX">
+                            <items>
+                                <label alignment="left" text="Nombre del Pan" id="7ZW-EZ-XbV"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="UI8-7a-IqC">
+                            <items>
+                                <button width="1" alignment="left" title="Siguiente" id="1WM-z5-CoC">
+                                    <connections>
+                                        <segue destination="AEH-b1-tRU" kind="modal" id="gyw-8f-O71"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="nKa-We-Nb0">
+            <objects>
+                <controller id="AEH-b1-tRU">
+                    <items>
+                        <group width="1" alignment="left" id="Rgf-vb-p4q">
+                            <items>
+                                <label alignment="left" text="Tipo de Carne" id="nn2-zf-dHO"/>
+                            </items>
+                        </group>
+                        <table alignment="left" id="iHn-jx-NB5">
+                            <items>
+                                <tableRow identifier="Pollo" id="n3N-Ht-LHi">
+                                    <group key="rootItem" width="1" alignment="left" id="nhJ-b8-3Q9">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Pollo" id="NQ9-fa-d3W"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Res" id="EJG-ed-7ay">
+                                    <group key="rootItem" width="1" alignment="left" id="boI-Ie-Wua">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Res" id="WD8-1z-cGD"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Puerco" id="Gmm-q5-tJG">
+                                    <group key="rootItem" width="1" alignment="left" id="cO2-Gc-UgS">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Puerco" id="FFf-UK-aoB"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Jamón" id="rgW-fc-4zN">
+                                    <group key="rootItem" width="1" alignment="left" id="FKZ-O0-5Iu">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Jamon" id="pnu-TV-5Eo"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Tocino" id="3Cj-5O-u3c">
+                                    <group key="rootItem" width="1" alignment="left" id="9g3-vd-jNf">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Sirloin" id="3aj-WG-RGg"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Sirloin" id="HH0-FY-nRE">
+                                    <group key="rootItem" width="1" alignment="left" id="7E1-LT-Xzv">
+                                        <items>
+                                            <switch width="1" alignment="left" value="YES" title="Tocino" id="7ra-PN-YeX"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="429" y="127"/>
+        </scene>
+    </scenes>
+</document>
