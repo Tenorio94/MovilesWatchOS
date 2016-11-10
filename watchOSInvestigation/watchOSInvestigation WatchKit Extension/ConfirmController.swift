@@ -11,9 +11,17 @@ import WatchKit
 
 class ConfirmController: WKInterfaceController {
 
+    @IBOutlet var labelResumen: WKInterfaceLabel!
+    
+    var sSummary: String = ""
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        if let dataReceived = context as? Data{
+            sSummary = dataReceived.sBreadType
+            labelResumen.setText(sSummary)
+        }
         // Configure interface objects here.
     }
     
