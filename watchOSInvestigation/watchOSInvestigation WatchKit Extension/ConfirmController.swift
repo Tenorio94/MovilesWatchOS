@@ -29,12 +29,45 @@ class ConfirmController: WKInterfaceController {
             sSummary = dataReceived.sBreadType
             labelResumen.setText(sSummary)
             
-            dataReceived.bPollo ? labelPollo.setText("Pollo") : labelPollo.setHidden(true)
-            dataReceived.bJamon ? labelJamon.setText("Jamon") : labelJamon.setHidden(true)
-            dataReceived.bRes ? labelRes.setText("Res") : labelRes.setHidden(true)
-            dataReceived.bSalchicha ? labelSalchicha.setText("Salchicha") : labelSalchicha.setHidden(true)
-            dataReceived.bTocino ? labelTocino.setText("Tocino") : labelTocino.setHidden(true)
+            if (dataReceived.bPollo) {
+                labelPollo.setHidden(false)
+                labelPollo.setText("Pollo")
+            }
+            else {
+                labelPollo.setHidden(true)
+            }
             
+            if (dataReceived.bJamon) {
+                labelJamon.setHidden(false)
+                labelJamon.setText("Jamón")
+            }
+            else {
+                labelJamon.setHidden(true)
+            }
+            
+            if (dataReceived.bRes) {
+                labelRes.setHidden(false)
+                labelRes.setText("Res")
+            }
+            else {
+                labelRes.setHidden(true)
+            }
+            
+            if (dataReceived.bSalchicha) {
+                labelSalchicha.setHidden(false)
+                labelSalchicha.setText("Salchicha")
+            }
+            else {
+                labelSalchicha.setHidden(true)
+            }
+            
+            if (dataReceived.bTocino) {
+                labelTocino.setHidden(false)
+                labelTocino.setText("Tocino")
+            }
+            else {
+                labelTocino.setHidden(true)
+            }
             
         }
         // Configure interface objects here.
